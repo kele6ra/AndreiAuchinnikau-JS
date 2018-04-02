@@ -61,6 +61,8 @@ console.log(null == "\n0\n"); //false
 console.log(+null == +"\n0\n"); //true
 //NULL and not empty string will be converted to a number because of the specific property of unary addition operation.
 
-console.log([] + {}); //"[object Object]"
+[] + {}; //"[object Object]"
+//Concatenation of two strings, fist is equal to "", second is equal to "[object Object]".
 
-console.log({} + []); // "[Object object]"
+{} + []; // 0 
+//{} is empty block, +[] is empty massive converted to value.
