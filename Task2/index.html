@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>1. Write a simple JavaScript function to join all elements of the following array into a string Sample array : myColor =
+    ["Red", "Green", "White", "Black"]; Expected Output : "Red,Green,White,Black" "Red,Green,White,Black" "Red+Green+White+Black"></p>
+    <p>2. Write a JavaScript function which accept a string as input and swap the case of each character. For example if you
+    input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX' </p>
+    <p>3. Write a JavaScript function to remove. 'null',
+    '0', '""', 'false', 'undefined' and 'NaN' values from an array. Go to the editor Sample array : [NaN, 0, 15, false, -22,
+    '',undefined, 47, null] Expected result : [15, -22, 47] </p>
+    <p>4. https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes </p>
+    <p>5. buffer</p>
+    <script src="js/homeWork.js"></script>
+    <script>
+        let myColor = ["Red", "Green", "White", "Black"];
+        console.log(makeStringFromArray(myColor, ';'));
+        console.log(makeStringFromArray(myColor, '+'));
+        console.log(makeStringFromArray(myColor, ','));
+
+        let simpleString = "The Quick Brown Fox";
+        console.log(changeTextCase(simpleString));
+
+        let simpleArray = [NaN, 0, 15, false, -22, '', undefined, 47, null];
+        console.log(clearArray(simpleArray));
+
+
+        var buffer = makeBuffer();
+        buffer('Замыкания');
+        buffer(' Использовать');
+        buffer(' Нужно!');
+        console.log(buffer());
+
+        var buffer = makeBuffer();
+        buffer(1);
+        buffer(2);
+        buffer(3);
+        console.log(buffer());
+    </script>
+</body>
+
+</html>
