@@ -32,7 +32,6 @@ function makeBuffer() {
 
 
 let sieveOfEratosthenes = inNubmer => {
-    var time = performance.now();
     if (isNaN(inNubmer)) {
         return false;
     }
@@ -50,7 +49,5 @@ let sieveOfEratosthenes = inNubmer => {
             }
         }
     }
-    time = performance.now() - time;
-    console.log(time);
     return simpleNumbers;
 }
