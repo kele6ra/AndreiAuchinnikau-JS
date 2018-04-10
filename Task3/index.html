@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>сверхабстрактный класс "Car" на нем базируются и дополняют его уже более конкретные классы, например "LightCar" и тд
+        и в самом конце будет объект машины -- "ржавый жигуль деда" указать для конкретной машины скорость дату техосмотра
+        номер страховки, etc</p>
+
+    <script src="js/homeWork.js"></script>
+    <script>
+
+        var newPassengerCarParams = {
+            size: {
+                width: 2400,
+                length: 4500,
+                height: 1700
+            },
+            common: {
+                brand: "Geely",
+                model: "SC7",
+                releaseYear: 2013,
+                VIN: "43543kmo34m5i345",
+                colour: "red"
+            },
+            characteristics: {
+                maxSpeed: 280,
+                power: 95,
+                fuel: "petrol",
+                gear: "auto",
+                class: "EURO4"
+            },
+            body: {
+                type: "hatchback",
+                doors: 3
+            },
+            maxFuel: 50
+        }
+
+        var commonCar = new PersonalCar(newPassengerCarParams, "Vasya Pupkin", "ржавое корыто");
+        commonCar.setInsuranceNumber("sldfkmdskl978y78y7sd");
+        commonCar.setInspectionDate("2018-04-03");
+        commonCar.setSpeed(40);
+        commonCar.setSpeed(40);
+        console.log(commonCar.getSpeed());
+        console.log(commonCar.getInsuranceNumber());
+        console.log(commonCar.getInspectionDate());
+        console.log(commonCar.getSize());
+        console.log(commonCar.getReleaseInfo());
+        console.log(commonCar.getCharacteristics());
+        console.log(commonCar.getPersonalCarInfo());
+
+
+    </script>
+</body>
+
+</html>
