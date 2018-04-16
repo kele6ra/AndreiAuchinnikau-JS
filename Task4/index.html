@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Form Action</title>
+</head>
+
+<body>
+    <div class="fa-content">
+        <div class="fa-content__wrap">
+            <header class="fa-header">
+                <div class="fa-header__wrap">
+                    <h1 class="fa-header__h1">
+                        Form Action
+                    </h1>
+                    <div class="fa-header__title">
+                        _mc4wp_action
+                    </div>
+                </div>
+            </header>
+            <main class="fa-main">
+                <div class="fa-main__wrap">
+                    <div class="fa-main__textbox">
+                        This field will allow your visitors to choose whether they would like to subscribe or unsubscribe
+                    </div>
+
+                    <form action="#" method="POST" class="fa-main__form">
+
+                        <h2 class="fa-main__h2">
+                            Field Label
+                        </h2>
+
+                        <input type="text" name="fa-text-input" class="fa-main__text-input" onchange="saveToLocalStorage(this.name, this.value)"
+                            type="text">
+
+                        <h2 class="fa-main__h2">
+                            Choice Type
+                        </h2>
+
+                        <select name="fa-select" class="fa-main__select" onchange="saveToLocalStorage(this.name, this.value)">
+                            <option value="1" selected>Radio Buttons</option>
+                            <option value="2">Input Buttons</option>
+                        </select>
+
+                        <h2 class="fa-main__h2">
+                            Choices
+                        </h2>
+
+                        <div class="fa-main__radio">
+                            <div class="fa-radio-input">
+                                <label class="fa-radio-input__item">
+                                    <input class="fa-radio-input__checkbox" name="fa-radio-input" id="fa-radio-subscribe" type="radio" onchange="saveRadioToLocalStorage(this.id, this.name, this.checked)">
+                                    <div class="fa-radio-input__checkbox-custom"></div>
+                                    <div class="fa-radio-input__label" type="text">Subscribe</div>
+                                    <input class="fa-radio-input__button" name="fa-radio-subscribe" onclick="clearRadio(this.name)" type="button">
+                                </label>
+
+                                <label class="fa-radio-input__item">
+                                    <input class="fa-radio-input__checkbox" name="fa-radio-input" id="fa-radio-unsubscribe" type="radio" onchange="saveRadioToLocalStorage(this.id, this.name, this.checked)">
+                                    <div class="fa-radio-input__checkbox-custom"></div>
+                                    <div class="fa-radio-input__label" type="text">Unsubscribe</div>
+                                    <input class="fa-radio-input__button" name="fa-radio-unsubscribe" onclick="clearRadio(this.name)" type="button">
+                                </label>
+                            </div>
+                        </div>
+
+                        <label class="fa-main__checkbox">
+                            <input class="fa-main__checkbox-input" name="fa-checkbox-input" type="checkbox" onchange="saveToLocalStorage(this.name, this.checked)">
+                            <div class="fa-main__checkbox-custom"></div>
+                            <div>Wrap in paragraph tags?</div>
+                        </label>
+
+                        <button class="fa-main__button">Add to form</button>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+    <script>
+        window.onload = function () {
+            if (window.performance.navigation.type == 1) {
+                localStorage.setItem("fa-text-input", '');
+                localStorage.setItem("fa-select", 1);
+                let radioButtons = document.getElementsByName("fa-radio-input");
+                for (let i = 0; i < radioButtons.length; i++) {
+                    localStorage.setItem(radioButtons[i].id, false)
+                }
+                localStorage.setItem("fa-checkbox-input", false);
+            }
+
+            document.getElementsByName("fa-text-input")[0].value = localStorage.getItem("fa-text-input") ? localStorage.getItem("fa-text-input") : '';
+
+            if (localStorage.getItem("fa-select")) {
+                selectOptions = document.getElementsByName("fa-select")[0];
+                for (let i = 0; i < selectOptions.length; i++) {
+                    if (document.getElementsByName("fa-select")[0].options[i].value === localStorage.getItem("fa-select")) {
+                        document.getElementsByName("fa-select")[0].options[i].selected = true;
+                    }
+                }
+            }
+
+            let radioButtons = document.getElementsByName("fa-radio-input");
+            for (let i = 0; i < radioButtons.length; i++) {
+                document.getElementById(radioButtons[i].id).checked = localStorage.getItem(radioButtons[i].id) === "true" ? true : false;
+            }
+
+            document.getElementsByName("fa-checkbox-input")[0].checked = localStorage.getItem("fa-checkbox-input") === "true" ? true : false;
+        };
+
+        function saveToLocalStorage(name, value) {
+            localStorage.setItem(name, value);
+        }
+
+        function saveRadioToLocalStorage(id, name, value) {
+            let radioButtons = document.getElementsByName(name);
+            for (let i = 0; i < radioButtons.length; i++) {
+                localStorage.setItem(radioButtons[i].id, false);
+            }
+            localStorage.setItem(id, value);
+        }
+
+        function clearRadio(id) {
+            document.getElementById(id).checked = false;
+            localStorage.setItem(id, false);
+        }
+
+    </script>
+</body>
+
+</html>
