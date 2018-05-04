@@ -1,0 +1,97 @@
+.jst5-datepicker{
+    position:relative;
+}
+
+.jst5-datepicker__wrap{
+    position: absolute;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 5px;
+    visibility: hidden;
+}
+
+.jst5-datepicker__wrap_visible{
+    visibility: visible;
+}
+
+.jst5-datepicker__header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    min-height: 30px;
+    margin: 3px;
+    font-weight: bold;
+    border: 1px solid grey;
+    border-radius: 3px;
+    background-color: lightgrey;
+}
+
+.jst5-arrow{
+    max-width: 16px;
+    max-height: 16px;
+}
+
+.jst5-arrow__wrap{
+    max-width:100%;
+    max-height:100%;
+    cursor: pointer;
+}
+
+.jst5-datepicker__days{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.jst5-datepicker__row{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 15%;
+}
+
+.jst5-datepicker__cell{
+    display: flex;
+    justify-content: flex-end;
+    min-width: 25px;
+    min-height: 20px;
+    margin: 2px;
+    padding-right: 2px;
+    cursor: pointer;
+}
+
+.jst5-datepicker__cell-weekdays{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    min-width: 25px;
+    line-height: 20px;
+    margin: 3px 4px;
+}
+
+.jst5-datepicker__cell_grey{
+    background-color: lightgrey;
+    border: 1px solid grey;
+}
+
+.jst5-datepicker__cell_yellow{
+    background-color: yellow;
+    border: 1px solid yellowgreen;
+}
+
+.jst5-datepicker__cell_green{
+    background-color: lightgreen;
+    border: 1px solid green;
+}
+
+.jst5-datepicker__cell_empty{
+    background-color: transparent;
+    border: 0;
+    margin: 3px;
+}
