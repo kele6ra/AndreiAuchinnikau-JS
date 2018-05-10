@@ -6,16 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/datePicker.js"></script>
     <title>Document</title>
 </head>
 
 <body>
     <input type="text" class="jst5-datepicker"></input>
 
-
-    <script src="js/datePicker.js">
-
+    <script>
+        let someDate = new Date(2016,10,10);
+        let aaa = new DatePicker(".jst5-datepicker", someDate);
+        aaa.setDatePicker();
     </script>
+
 
 </body>
 
