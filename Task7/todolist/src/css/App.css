@@ -1,0 +1,33 @@
+.tsk7-todo__wrap{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.tsk7-todo__add-task-wrap{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.tsk7-todo__add-task-input{
+  min-height: 30px;
+  min-width: 200px;
+  padding: 0 5px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: green;
+  caret-color: #FFF;
+}
+
+.tsk7-todo__add-task-button{
+  height: 30px;
+  width: 30px;
+  margin: 0 10px;
+  cursor: pointer;
+  background-color: #FFF;
+  font-size: 30px;
+}

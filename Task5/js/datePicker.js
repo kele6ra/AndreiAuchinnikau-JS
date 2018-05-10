@@ -1,5 +1,5 @@
-function DatePicker() {
-    let dp_inputs = document.querySelectorAll('.jst5-datepicker');
+function DatePicker(selector, initDate) {
+    let dp_inputs = document.querySelectorAll(selector);
     (function checkInputs() {
         if (dp_inputs.length === 0) {
             return;
@@ -13,7 +13,7 @@ function DatePicker() {
 
     this.setDatePicker = function () {
         for (let i = 0; i < dp_inputs.length; i++) {
-            input_dates[i] = dp_inputs[i].value ? new Date(dp_inputs[i].value) : current_date;
+            input_dates[i] = dp_inputs[i].value ? new Date(dp_inputs[i].value) : initDate ? new Date(initDate) : current_date;
             let renderer = new RenderDatePicker();
             dp_inputs[i].insertAdjacentHTML('afterEnd', renderer.renderCalendar(input_dates[i]));
         }
@@ -202,5 +202,6 @@ function RenderDatePicker() {
 
 }
 
-let aaa = new DatePicker();
+let someDate = new Date(2016,10,10);
+let aaa = new DatePicker(".jst5-datepicker", someDate);
 aaa.setDatePicker();

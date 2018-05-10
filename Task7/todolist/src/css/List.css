@@ -1,0 +1,37 @@
+.tsk7-todo-list__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tsk7-todo-list__task-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.tsk7-todo-list__task {
+    min-height: 30px;
+    min-width: 200px;
+    padding: 0 5px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    cursor: pointer;
+    caret-color: #FFF;
+}
+
+.tsk7-todo-list__task_line-through{
+    text-decoration: line-through;
+}
+
+.tsk7-todo-list__button{
+    height: 30px;
+    width: 30px;
+    margin: 0 10px;
+    cursor: pointer;
+    background-color: #FFF;
+    font-size: 30px;
+}
