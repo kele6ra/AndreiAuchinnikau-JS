@@ -7,8 +7,9 @@ export default class App extends Component {
         super(props);
         this.state = {
             term: '',
-            items: []
+            items: localStorage.items?localStorage.items.split(','):[]
         };
+        
     }
 
     onChange = (event) => {
@@ -19,9 +20,10 @@ export default class App extends Component {
         event.preventDefault();
         let items = this.state.items;
         items.push(this.state.term);
+        localStorage.setItem('items',items.join());
         this.setState({ items: items, term: "" });
     }
-
+    
     render() {
         return (
             <div className="tsk7-todo">

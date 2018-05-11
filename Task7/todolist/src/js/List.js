@@ -6,7 +6,7 @@ export default class List extends Component {
         super(props);
         this.state = {
             items: this.props.items,
-            itemsState: []
+            itemsState: localStorage.itemsState?localStorage.itemsState.split(','):[]
         };
     }
 
@@ -16,6 +16,7 @@ export default class List extends Component {
         let taskIndex = event.target.getAttribute('todoid');
         items.splice(taskIndex,1);
         itemsState.splice(taskIndex,1);
+        localStorage.setItem('items', items.join());
         this.setState({ items: items, itemsState: itemsState});
     }
 
@@ -23,6 +24,7 @@ export default class List extends Component {
         let taskIndex = event.target.getAttribute('todoid');
         let itemsState = this.state.itemsState;
         event.target.classList.contains('tsk7-todo-list__task_line-through')?itemsState[taskIndex]="":itemsState[taskIndex]="isMarked";
+        localStorage.setItem('itemsState',itemsState.join());
         this.setState({ itemsState: itemsState});
     }
 
