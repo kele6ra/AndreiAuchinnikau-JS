@@ -17,6 +17,7 @@ export default class List extends Component {
         items.splice(taskIndex,1);
         itemsState.splice(taskIndex,1);
         localStorage.setItem('items', items.join());
+        localStorage.setItem('itemsState',itemsState.join());
         this.setState({ items: items, itemsState: itemsState});
     }
 
