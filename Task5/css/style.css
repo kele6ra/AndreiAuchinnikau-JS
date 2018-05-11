@@ -3,18 +3,18 @@
 }
 
 .jst5-datepicker__wrap{
+    z-index: 999;
     position: absolute;
-    display: inline-flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     border: 1px solid grey;
     border-radius: 5px;
     padding: 5px;
-    visibility: hidden;
 }
 
 .jst5-datepicker__wrap_visible{
-    visibility: visible;
+    display: inline-flex;
 }
 
 .jst5-datepicker__header{

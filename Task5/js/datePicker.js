@@ -13,6 +13,7 @@ function DatePicker(selector, initDate) {
 
     this.setDatePicker = function () {
         for (let i = 0; i < dp_inputs.length; i++) {
+            if (!dp_inputs[i].classList.contains('jst5-datepicker'))dp_inputs[i].classList.add('jst5-datepicker');
             if (dp_inputs[i].value){
                 input_dates[i] = new Date(dp_inputs[i].value);
             } else if (initDate){
